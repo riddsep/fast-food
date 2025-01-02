@@ -6,7 +6,7 @@ import { createOrder } from "../../services/apiRestaurant";
 // https://uibakery.io/regex-library/phone-number
 const isValidPhone = (str) =>
   /^\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/.test(
-    str
+    str,
   );
 
 const fakeCart = [
@@ -42,27 +42,43 @@ function CreateOrder() {
 
   return (
     <div>
-      <h2>Ready to order? Let's go!</h2>
+      <h2 className="my-5 text-xl font-semibold">
+        Ready to order? Let&apos;s go!
+      </h2>
 
       <Form method="POST">
-        <div>
-          <label>First Name</label>
-          <input type="text" name="customer" required />
+        <div className="mb-2 flex">
+          <label className="basis-[200px]">First Name</label>
+          <input
+            type="text"
+            name="customer"
+            required
+            className="w-full rounded-xl px-2 py-1"
+          />
         </div>
 
-        <div>
-          <label>Phone number</label>
-          <div>
-            <input type="tel" name="phone" required />
-          </div>
+        <div className="mb-2 flex">
+          <label className="basis-[200px]">Phone number</label>
+
+          <input
+            type="tel"
+            name="phone"
+            required
+            className="w-full rounded-xl px-2 py-1"
+          />
+
           {formErrors?.phones && <p>{formErrors.phones}</p>}
         </div>
 
-        <div>
-          <label>Address</label>
-          <div>
-            <input type="text" name="address" required />
-          </div>
+        <div className="mb-2 flex">
+          <label className="basis-[200px]">Address</label>
+
+          <input
+            type="text"
+            name="address"
+            required
+            className="w-full rounded-xl px-2 py-1"
+          />
         </div>
 
         <div>
@@ -78,7 +94,10 @@ function CreateOrder() {
 
         <div>
           <input type="hidden" name="cart" value={JSON.stringify(cart)} />
-          <button disabled={isSubmitting}>
+          <button
+            disabled={isSubmitting}
+            className="mt-5 rounded-full bg-yellow-500 px-4 py-1"
+          >
             {isSubmitting ? "Placing order..." : "Order now"}
           </button>
         </div>
