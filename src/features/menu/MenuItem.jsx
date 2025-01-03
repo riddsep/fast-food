@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Button from "../../ui/Button";
 import { formatCurrency } from "../../utils/helpers";
 import { addItem, getCurrentQuantityById } from "../cart/cartSlice";
-import Deleteitem from "../cart/Deleteitem";
+import DeleteItem from "../cart/DeleteItem";
 import UpdateItemQuantity from "../cart/UpdateItemQuantity";
 
 function MenuItem({ pizza }) {
@@ -49,7 +49,7 @@ function MenuItem({ pizza }) {
                 pizzaId={id}
                 currentQuantity={currentQuantity}
               />
-              <Deleteitem pizzaId={id} />
+              <DeleteItem pizzaId={id} />
             </div>
           ) : (
             !soldOut && (
