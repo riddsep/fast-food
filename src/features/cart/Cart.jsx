@@ -9,6 +9,7 @@ import { clearCart, getCart, getUsername } from "./cartSlice";
 function Cart() {
   const username = useSelector(getUsername);
   const cart = useSelector(getCart);
+
   const dispatch = useDispatch();
 
   if (!cart.length) return <EmptyCart />;
