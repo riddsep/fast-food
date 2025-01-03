@@ -38,3 +38,10 @@ export const {
   clearCart,
 } = cartSlice.actions;
 export default cartSlice.reducer;
+
+export const getCart = (state) => state.cart.cart;
+export const getUsername = (store) => store.user.username;
+export const getTotalCartQuantity = (state) =>
+  state.cart.cart.reduce((sum, item) => sum + item.quantity, 0);
+export const getTotalCartPrice = (state) =>
+  state.cart.cart.reduce((acc, curr) => acc + curr.totalPrice, 0);
