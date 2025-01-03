@@ -29,7 +29,6 @@ function CreateOrder() {
     error: errorAddress,
   } = useSelector((state) => state.user);
   const isLoadingStatus = addressStatus === "loading";
-  console.log(position);
 
   const [withPriority, setWithPriority] = useState(false);
   const cart = useSelector(getCart);
